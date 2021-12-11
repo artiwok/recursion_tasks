@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sum_of_two_nums</title>
+</head>
+
+<body>
+  <script>
+
+    // Hайти сумму введенных чисел, не используя сложения данных чисел, а используя +1 и -1 с одним из них
+
+    let num_1 = +prompt(`"Hайти сумму введенных чисел, не используя сложения данных чисел, а используя +1 и -1 с одним из них".\n Enter first number:`);
+    let num_2 = +prompt(`Enter second number:`);
+
+    function sum(a, b) {
+      if (a === 0) {
+        return b;
+      } else {
+        return sum(a - 1, b + 1);
+      }
+    }
+
+    console.log(sum(num_1, num_2));
+
+  </script>
+</body>
+
+</html>

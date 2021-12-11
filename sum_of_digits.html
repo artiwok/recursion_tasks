@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sum_of_digits</title>
+</head>
+<body>
+  <script>
+
+    // // Hайти сумму цифр, из которых состоит число
+
+
+    // Variant 1
+
+    let num4 = +prompt(`"Hайти сумму цифр, из которых состоит число".\n Enter a number:`);
+    function sumDigit(num) {
+      if (num < 10) {
+        return num;
+      } else {
+        return num % 10 /*получение последней цифры числа*/ + sumDigit(Math.floor(num / 10));
+      }
+    }
+
+    console.log(sumDigit(num4));
+
+
+    // // Variant 2
+
+    // function sumDigit(num) {
+    //   if (num < 10) {
+    //     return num;
+    //   }
+    //   return Math.floor(sumDigit(num % 10) + sumDigit(num / 10));
+    // }
+
+    // console.log(sumDigit(100300)); // 4
+
+
+    // // Variant 3
+
+    // function sumDigit(num) {
+    //   if (num < 10) {
+    //     return num;
+    //   }
+    //   return Math.floor(num % 10 + sumDigit(num / 10));
+    // }
+
+    // console.log(sumDigit(234)); // 9
+
+
+    // // Variant 4
+
+    // let num3 = +prompt(`"Hайти сумму цифр, из которых состоит число".\n Enter a number:`);
+    // function sumDigit(num) {
+    //   let sum = 0;
+    //   while (num > 0) {
+    //     sum += num % 10;
+    //     num = Math.floor(num / 10);
+    //   }
+    //   return sum;
+    // }
+
+    // console.log(sumDigit(num3));
+
+  </script>
+</body>
+</html>

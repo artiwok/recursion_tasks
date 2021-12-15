@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>is_power_of_two</title>
+</head>
+<body>
+  <script>
+    
+    // является ли число степенью двойки
+
+    // Variant 1
+
+    let a = +prompt(`"является ли число степенью двойки".\n Enter a number:`);
+    function isPowerOfTwo(num) {
+      if (num === 1) {
+        return true;
+      } else if (num % 2 === 1) {
+        return false;
+      } else {
+        return isPowerOfTwo(Math.floor(num / 2));
+      }
+    }
+
+    console.log(isPowerOfTwo(a));
+
+
+    // Variant 2
+
+    // let b = +prompt(`"является ли число степенью двойки".\n Enter a number:`);
+    // function isPowerOfTwo(num) {
+    //   if (num === 1) {
+    //     return true;
+    //   } else return (num % 2 === 0) && isPowerOfTwo(Math.floor(num / 2));
+    // }
+
+    // console.log(isPowerOfTwo(b));
+
+  </script>
+</body>
+</html>

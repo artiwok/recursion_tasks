@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>recursive_string_palindrome</title>
+</head>
+
+<body>
+  <script>
+
+    // recursive string palindrome check with respect to possible spases occurrence and case sensitiveness in a string
+    // проверка строки на палиндром рекурсией с учетом возможных пробелов и регистра в строке
+
+    function isStrPalindromeRecursive(str) {
+      str = str.split('');
+      for (let i = 0; i < str.length; i++) {
+        if (str[i] === ' ') {
+          str.splice(i, 1);
+        }
+      }
+      str = str.join('').toLowerCase();
+      if (str.length === 1 || str.length === 0) {
+        return true;
+      } else if (str[0] === str[str.length - 1]) {
+        return isStrPalindromeRecursive(str.slice(1, -1));
+      } else {
+        return false;
+      }
+    }
+
+    console.log(isStrPalindromeRecursive('1221'));
+    console.log(isStrPalindromeRecursive('353'));
+    console.log(isStrPalindromeRecursive('35753'));
+    console.log(isStrPalindromeRecursive('-747'));
+    console.log(isStrPalindromeRecursive('10'));
+    console.log(isStrPalindromeRecursive('1'));
+    console.log(isStrPalindromeRecursive('0'));
+    console.log(isStrPalindromeRecursive('187371'));
+    console.log(isStrPalindromeRecursive('А роза упала на лапу Азора'));
+    console.log(isStrPalindromeRecursive('Ne GnI pApIn GeN'));
+    console.log(isStrPalindromeRecursive('KAYAK'));
+
+  </script>
+</body>
+
+</html>
